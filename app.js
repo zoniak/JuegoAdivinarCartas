@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //Esto es para mas adelante hacer todas las comparaciones y funcionamiento del programa
   cardArray.sort(() => 0.5 - Math.random())
-
   const grid = document.querySelector('.grid')
   const resultDisplay = document.querySelector('#result')
   let cardsChosen = []
@@ -126,5 +125,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  createBoard() //Funcion para crearr el tablero
+  createBoard() //Funcion para crear el tablero
 })
