@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     else if (cardsChosen[0] === cardsChosen[1]) { //Son iguales
       alert('Has encontrado dos cartas iguales jeje')
       //Quitamos las cartas
-      cards[optionOneId].setAttribute('src', 'images/white.png')
+      cards[optionOneId].setAttribute('src', 'images/white.png') //Aqui ponemos las cartas en blanco
       cards[optionTwoId].setAttribute('src', 'images/white.png')
       cards[optionOneId].removeEventListener('click', flipCard)
       cards[optionTwoId].removeEventListener('click', flipCard)
