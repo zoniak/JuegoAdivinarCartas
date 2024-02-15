@@ -1,5 +1,12 @@
+//Esto es para cargar primero todo como vimos anteriormente
 document.addEventListener('DOMContentLoaded', () => {
-  //list all card options
+
+  /*
+  Primero creamos todas las variables necesarias
+  */
+
+
+  //lista con todas las cartas
   const cardArray = [
     {
       name: 'fries',
@@ -51,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ]
 
+  //Esto es para mas adelante hacer todas las comparaciones y funcionamiento del programa
   cardArray.sort(() => 0.5 - Math.random())
 
   const grid = document.querySelector('.grid')
@@ -59,58 +67,64 @@ document.addEventListener('DOMContentLoaded', () => {
   let cardsChosenId = []
   let cardsWon = []
 
-  //create your board
+  //creamos el tablero con la cartas
   function createBoard() {
-    for (let i = 0; i < cardArray.length; i++) {
+    for (let i = 0; i < cardArray.length; i++) { //recorremos el array con las cartas
       const card = document.createElement('img')
-      card.setAttribute('src', 'images/blank.png')
-      card.setAttribute('data-id', i)
-      card.addEventListener('click', flipCard)
+      card.setAttribute('src', 'images/blank.png') //etiqueta img con source
+      card.setAttribute('data-id', i) //Vamos asignando los id desde 0
+      card.addEventListener('click', flipCard) //evento que llama a flipCard (mas abajo)
       grid.appendChild(card)
     }
   }
 
-  //check for matches
+  //Funcion para ver si son iguales o no
   function checkForMatch() {
     const cards = document.querySelectorAll('img')
     const optionOneId = cardsChosenId[0]
     const optionTwoId = cardsChosenId[1]
     
-    if(optionOneId == optionTwoId) {
+    if(optionOneId == optionTwoId) { //Caso en el que son iguales
       cards[optionOneId].setAttribute('src', 'images/blank.png')
       cards[optionTwoId].setAttribute('src', 'images/blank.png')
-      alert('You have clicked the same image!')
+      alert('Has hecho click en la misma imagen!!!')
     }
-    else if (cardsChosen[0] === cardsChosen[1]) {
-      alert('You found a match')
+    else if (cardsChosen[0] === cardsChosen[1]) { //Son iguales
+      alert('Has encontrado dos cartas iguales jeje')
+      //Quitamos las cartas
       cards[optionOneId].setAttribute('src', 'images/white.png')
       cards[optionTwoId].setAttribute('src', 'images/white.png')
       cards[optionOneId].removeEventListener('click', flipCard)
       cards[optionTwoId].removeEventListener('click', flipCard)
       cardsWon.push(cardsChosen)
-    } else {
+    } else { //Son distintas
       cards[optionOneId].setAttribute('src', 'images/blank.png')
       cards[optionTwoId].setAttribute('src', 'images/blank.png')
-      alert('Sorry, try again')
+      alert('nah bro siguen intentandolo')
     }
+    //Vaciamos los arrays usados para comparar los elegidos
     cardsChosen = []
     cardsChosenId = []
     resultDisplay.textContent = cardsWon.length
-    if  (cardsWon.length === cardArray.length/2) {
-      resultDisplay.textContent = 'Congratulations! You found them all!'
+    if  (cardsWon.length === cardArray.length/2) { //Si encontramos todas
+      resultDisplay.textContent = 'Ole mi niño ahi que eh un maquina!'
     }
   }
 
-  //flip your card
+  //Funcion flipCard para cuando le damos la vuelta a una carta
   function flipCard() {
     let cardId = this.getAttribute('data-id')
+    /*
+      Con el push metemos los elementos en las listas, en este caso
+      cardsChosen y cardsChosenId
+    */
     cardsChosen.push(cardArray[cardId].name)
     cardsChosenId.push(cardId)
-    this.setAttribute('src', cardArray[cardId].img)
+    this.setAttribute('src', cardArray[cardId].img) //Se muestran
     if (cardsChosen.length ===2) {
       setTimeout(checkForMatch, 500)
     }
   }
 
-  createBoard()
+  createBoard() //Funcion para crearr el tablero
 })
