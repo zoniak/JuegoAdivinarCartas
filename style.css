@@ -1,3 +1,11 @@
+*{
+  padding: 0;
+  margin: 0;
+  /*
+  background: linear-gradient(90deg, rgba(230,171,22,1) 0%, rgb(194, 184, 0) 100%);
+  */
+}
+
 .grid {
   display: flex;
   flex-wrap: wrap;
