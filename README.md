@@ -1,29 +1,29 @@
-# Memory Game
-A retro grid-based game in vanilla JavaScript, HTML and CSS
+# Juego de memoria
+Un juego retro basado en cuadrículas en vanilla JavaScript, HTML y CSS
 
-View the full walkthrough [here](https://www.youtube.com/channel/UC5DNytAJ6_FISueUfzZCVsw) 
+El Juego de la Memoria, también conocido como Juego de Concentración o Juego de Emparejar, es un sencillo juego de cartas en el que tienes que emparejar parejas dando la vuelta a 2 cartas cada vez. Existen tantas versiones de este juego que es difícil determinar su origen exacto. Se dice que el famoso escritor de Huckleberry Finn, Mark Twain, inventó su propia versión. Lo he buscado en Google y, sea lo que sea, se parece más a una forma de calcular los impuestos que debes que a un juego de cartas.
 
-Memory Game, also known as the Concentration card game or Matching Game, is a simple card game where you need to match pairs by turn over 2 cards at a time. There are so many versions of it it is hard to in down it's exact origin. There are claims that the famuos writer of Huckleberry Finn, Mark Twain invented his own version. I googled it and whatever it is, it looks more like a way of trying to figure out how much tax you owe rather than match cards.
+En este repositorio, me centraré especialmente en el establecimiento de atributos en JavaScript. Si quieres aprender a usar setAttritube y getAttribute de forma efectiva, por favor echa un vistazo a mi código.
 
-In this repo, I will be putting extra focus on setting Attributes in JavaScript. If you want to learn how to use setAttritube and getAttribute effectively, please have a look at my code.
+He mantenido el estilo en un bare miniumum para que usted pueda ir salvaje y hacer su propio. Por favor, etiquétame porque me encantaría ver tu juego.
 
-I have kept the styling at a bare miniumum for you to go wild and make it your own. Please tag me as I would LOVE to see your game!!!
-
-## What inbuilt functions are we going to focus on?
-- for loops
+## ¿En qué funciones incorporadas nos vamos a centrar?
+- bucles for
 - addEventListener
-- setAttribute
+- setAttributo
 - getAttribute
-- data-name
+- nombreDatos
 - document.querySelector
 - createElement
 
-## Rules of Memory Game
-- You will start by flipping over one card
-- If the next card you flip matches, a pop up alert notifies you and you get +1 to your score
-- These cards then disspear
-- If the next card you flip does not match, a pop up alert notifies you of ths and the cards flip back
-- The game continues until you match all the cards on the board
+## Reglas del juego de memoria
+- Empezarás volteando una carta
+- Si la siguiente carta que volteas coincide, una alerta emergente te lo notifica y obtienes +1 a tu puntuación
+- Estas cartas se disipan
+- Si la siguiente carta que voltea no coincide, una alerta emergente se lo notifica y las cartas vuelven a voltearse.
+- El juego continúa hasta que consigas emparejar todas las cartas del tablero.
+
+Traducción realizada con la versión gratuita del traductor DeepL.com
 
 ### MIT Licence
 
